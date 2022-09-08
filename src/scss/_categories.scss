@@ -1,0 +1,109 @@
+.categories-container {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title-container {
+      width: 100%;
+      margin-bottom: 14px;
+      text-align: center;
+      h2 {
+        position: absolute;
+        padding-top: 5px;
+        width: 106px;
+        height: 26px;
+        left: 10px;
+        top: 8px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 26px;
+        /* identical to box height */
+
+        letter-spacing: 0.005em;
+
+        color: #121212;
+      }
+    }
+    .see-all{
+        display: flex;
+        padding-top: 8px;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 8px;
+
+        position: absolute;
+        width: 70px;
+        height: 16px;
+        right: 16px;
+        top: 10px;
+
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 16px;
+        /* identical to box height */
+            
+        text-align: right;
+        letter-spacing: 0.005em;
+            
+        color: #2F5AC7;
+
+      }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: 1rem;
+      .category {
+        display: flex;
+        // flex-direction: column;
+        align-items: center;
+        width: 157px;
+        height: 56px;
+        // gap: 1rem;
+        // padding: 1rem;
+        border-radius: 0.7rem;
+        background-color: var(--card-color2);
+        box-shadow: var(--fixed-shadow);
+        transition: var(--transition);
+        &:hover {
+          box-shadow: var(--elevate-shadow);
+        }
+        h4 {
+          padding-left: 8px;
+          color: var(--dark-blue);
+        }
+        p {
+          color: var(--light-blue);
+        }
+      }
+    }
+
+    button {
+      padding: 0.8rem 2rem;
+      border-radius: 2rem;
+      background-color: var(--background);
+      color: var(--blue);
+      border: 0.1rem solid var(--blue);
+      font-weight: bolder;
+      transition: var(--transition);
+      &:hover {
+        background-color: var(--dark-blue);
+        color: var(--background);
+        border-color: var(--background);
+      }
+    }
+  }
+  @media only screen and (min-device-width: 768px) {
+    .container {
+      .categories {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
