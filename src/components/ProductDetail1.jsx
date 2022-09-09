@@ -10,14 +10,18 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import product1 from "../assets/Product1.png";
 import Button from '@mui/material/Button';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from "react-router";
 import redcircle from "../assets/redcircle.png";
 import bluecircle from "../assets/bluecircle.png";
 import whiteCircle from "../assets/whiteCircle.png"
 import RR from "../assets/RR.png"
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Wishlist from "../assets/Wishlist.png"
 import { useStyles } from './ProductDetail.styles';
 
@@ -78,6 +82,7 @@ const ProductDetail1 = () => {
   const displayCounter = counter > -1;
   return (
     <div className="productDetail1-container mx-3 py-3">
+      <Box>
       <div className="container">
         <div className="products">
         <img src={IconBack} className="backicon" alt="search icon" onClick={() => navigate('/')}/>
@@ -183,6 +188,16 @@ const ProductDetail1 = () => {
       <div>
       <img src={RR} className="ratings" alt="ratings" />
       </div>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation
+          showLabels
+        >
+          <BottomNavigationAction className={classes.bottomNavigationIcon} icon={<FavoriteBorderOutlinedIcon />} />
+          <Button className={classes.bottomNavigationButton}>Added to Bag</Button>
+          
+        </BottomNavigation>
+      </Paper>
+      </Box>
     </div>
   );
 }

@@ -36,5 +36,26 @@ export const useStyles = makeStyles({
   },
   intensityDivP: {
     width: '115px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'
+  },
+  bottomNavigationIcon:{
+    position: 'absolute',
+    left: '10px',
+    bottom: '18px',
+  },
+  bottomNavigationButton: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: '10px',
+    gap: '10px',
+
+    position: 'absolute',
+    width: '283px',
+    height: '40px',
+    left: '90px',
+    bottom: '8px',
+    color: '#FFFFFF',
+    background: '#142F75',
+    borderRadius: '8px',
   }
 });
