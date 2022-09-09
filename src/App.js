@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import {AppRouter} from "./routes/routes"
+import { AppRouter } from './routes/routes'
 
-
-function App() {
- 
+function App () {
   return (
     <AppRouter />
-  );
+  )
 }
 
-export default App;
+export default App
