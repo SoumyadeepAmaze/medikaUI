@@ -59,6 +59,7 @@ function Products() {
                 height="149"
                 image={image}
                 alt={name}
+                className={classes.cardMedia}
                 class="padding-image"
                 onClick={() => navigate(route)}
               />
