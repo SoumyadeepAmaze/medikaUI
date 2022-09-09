@@ -39,8 +39,8 @@ export const useStyles = makeStyles({
   },
   bottomNavigationIcon:{
     position: 'absolute',
-    left: '10px',
-    bottom: '18px',
+    left: '24px',
+    bottom: '10px',
   },
   bottomNavigationButton: {
     display: 'flex',
@@ -57,5 +57,22 @@ export const useStyles = makeStyles({
     color: '#FFFFFF',
     background: '#142F75',
     borderRadius: '8px',
+  },
+  bottomNavigationButtonSpan:{
+    width: '263px',
+    height: '20px',
+    marginTop: '-3px',  
+    fontStyle: 'normal',
+    fontWeight: '700',
+    fontSize: '18px',
+    lineHeight: '20px',
+    /* identical to box height, or 143% */
+    textAlign: 'center',
+    letterSpacing: '0.005em',
+  },
+  contentContainer: {
+    height: '500px',
+    borderRadius: '20px 20px 0px 0px',
+    boxShadow: '0px -4px 17px rgb(0 0 0 / 8%)'
   }
 });

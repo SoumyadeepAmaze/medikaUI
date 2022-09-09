@@ -9,7 +9,6 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import product1 from "../assets/Product1.png";
-import Button from '@mui/material/Button';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -17,6 +16,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from "react-router";
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import redcircle from "../assets/redcircle.png";
 import bluecircle from "../assets/bluecircle.png";
 import whiteCircle from "../assets/whiteCircle.png"
@@ -43,6 +43,7 @@ const ProductDetail1 = () => {
   const [intensity,setIntensity] = useState('40 cd');
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('1');
+  const [isBagAdded,setIsBagAdded] = useState(false)
 
   const [alignment1, setAlignment1] = useState('Red');
   const [alignment2, setAlignment2] = useState('XXL');
@@ -81,7 +82,7 @@ const ProductDetail1 = () => {
   const classes = useStyles();
   const displayCounter = counter > -1;
   return (
-    <div className="productDetail1-container mx-3 py-3">
+    <div className="productDetail1-container py-3">
       <Box>
       <div className="container">
         <div className="products">
@@ -97,6 +98,7 @@ const ProductDetail1 = () => {
             );
           })}
         </div>
+        <div className={classes.contentContainer}>
         <div className="title-container">
           <h2 className="prodDetail">Ivoclar Vivadent BluePhase</h2>
           <h3 className="price">$599</h3>
@@ -121,7 +123,7 @@ const ProductDetail1 = () => {
         <p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
       </TabContext>
       </Box>
-
+      </div>
       </div>
       <Drawer
             anchor='bottom'
@@ -192,8 +194,8 @@ const ProductDetail1 = () => {
         <BottomNavigation
           showLabels
         >
-          <BottomNavigationAction className={classes.bottomNavigationIcon} icon={<FavoriteBorderOutlinedIcon />} />
-          <Button className={classes.bottomNavigationButton}>Added to Bag</Button>
+          <img src={Wishlist} className={classes.bottomNavigationIcon} alt="wishlist"/>
+          <button className={classes.bottomNavigationButton} onClick={() => setIsBagAdded(current => !current)}><span className={classes.bottomNavigationButtonSpan}>{isBagAdded?<span style={{marginRight:"8px"}}><CheckOutlinedIcon fontSize="small"/></span>:''}{isBagAdded?'Added to Bag':'Add to Bag'}</span></button>
           
         </BottomNavigation>
       </Paper>

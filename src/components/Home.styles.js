@@ -9,5 +9,8 @@ export const useStyles = makeStyles({
   },
   dialogContent: {
     maxHeight:"100px"
-  }
+  },
+  backDiv: {
+    display: 'flex',alignItems: 'center',flexDirection: 'row',background: '#FFFFFF',padding: '11px',width: '88%',marginTop:'15px',marginLeft:"24px"
+  },
 });

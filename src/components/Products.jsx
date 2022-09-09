@@ -11,6 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Wishlist2 from "../assets/Wishlist2.png"
 import { useStyles } from './Products.styles';
 
 function Products() {

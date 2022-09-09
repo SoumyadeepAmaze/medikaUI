@@ -7,9 +7,12 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import history from '../assets/history.png'
 import { useStyles } from './Home.styles';
+import IconBack from "../assets/IconBack.png";
+import { useNavigate } from "react-router";
 
 function Home() {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -34,7 +37,11 @@ function Home() {
         open={open}
         onClose={handleClose}
       >
+      <div className={classes.backDiv}>
+      <img src={IconBack} className="backicon" alt="search icon" onClick={() => setOpen(false)}/>
+      </div>
       <div className={classes.searchDiv}>
+          
           <img src={search} alt="search icon" onClick={handleClickOpen}/>
           <input className={classes.searchInput} type="text" placeholder="Syringe,centrifuge,Ventilator"/> 
       </div>
