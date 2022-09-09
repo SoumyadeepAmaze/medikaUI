@@ -11,6 +11,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useStyles } from './Products.styles';
+
 function Products() {
   const navigate = useNavigate();
 
@@ -40,6 +42,7 @@ function Products() {
       price: "$899",
     },
   ];
+  const classes = useStyles();
   return (
     <div className="products-container mx-3 py-3">
       <div className="container">
@@ -50,7 +53,7 @@ function Products() {
         <div className="products">
           {products.map(({ image, name, price,route }, index) => {
             return (
-              <Card sx={{ maxWidth: "47%", display: "inline-block", marginRight:"3%", marginBottom:"3%"}}>
+              <Card className={classes.cardContainer}>
               <CardMedia
                 component="img"
                 height="149"

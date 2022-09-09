@@ -19,6 +19,7 @@ import bluecircle from "../assets/bluecircle.png";
 import whiteCircle from "../assets/whiteCircle.png"
 import RR from "../assets/RR.png"
 import Wishlist from "../assets/Wishlist.png"
+import { useStyles } from './ProductDetail.styles';
 
 import "../scss/_productDetail.scss";
 
@@ -73,6 +74,7 @@ const ProductDetail1 = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const classes = useStyles();
   const displayCounter = counter > -1;
   return (
     <div className="productDetail1-container mx-3 py-3">
@@ -100,18 +102,18 @@ const ProductDetail1 = () => {
         <div className="details">
           <span onClick={handleClickOpen}><span className="colorDetails">color: <span style={{color:"#2F5AC7"}}>{color}</span></span>&nbsp;<span className="sizeDetails">Size: <span style={{color:"#2F5AC7"}}>{size}</span></span>&nbsp;<span className="intensityDetails">Intensity: <span style={{color:"#2F5AC7"}}>{intensity}</span></span></span>
         </div>
-        <Box sx={{ typography: 'body1',position: 'absolute',width: '330px',height: '224px',left: '20px',top: '500px'}}>
+        <Box className={classes.box1Container}>
         <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box className={classes.box2Container}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Description" value="1" />
             <Tab label="Materials" value="2" />
           </TabList>
         </Box>
-        <TabPanel value="1"><p style={{fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p><br/>
-        <p style={{fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
-        <TabPanel value="2"><p style={{fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'}}>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
-        <p style={{fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
+        <TabPanel value="1"><p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p><br/>
+        <p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
+        <TabPanel value="2"><p className={classes.tabPanelP}>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
+        <p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
       </TabContext>
       </Box>
 
@@ -124,11 +126,11 @@ const ProductDetail1 = () => {
         <Box
           sx={{ width: 'auto'}}
         >
-        <div style={{flexDirection:'row',alignItems:'flex-start',display:'flex',padding:'8px 8px 8px 8px',gap:'8px',width:'359px',height:'84px'}}>
-          <h3 style={{fontStyle:'normal',fontWeight:'500',fontSize:'18px',lineHeight:'35px',letterSpacing:'0.005em',width:'126px',height:'21px',color:'#121212'}}>Select Variant</h3>
+        <div className={classes.variantDiv}>
+          <h3 className={classes.variantDivH3}>Select Variant</h3>
         </div>
-        <div style={{flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'}}>
-          <p style={{width: '95px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'}}>Color: <span style={{color:'#2F5AC7'}}>{color}</span></p>
+        <div className={classes.colorDiv}>
+          <p className={classes.colorDivP}>Color: <span style={{color:'#2F5AC7'}}>{color}</span></p>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -138,14 +140,14 @@ const ProductDetail1 = () => {
       aria-label="Platform"
       spacing={3}
     >
-      <ToggleButton value="Red" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setColor('Red')}><img src={redcircle}  alt="redcircle" />&nbsp;Red</ToggleButton>
-      <ToggleButton value="Blue" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setColor('Blue')}><img src={bluecircle} alt="bluecircle" />&nbsp;Blue</ToggleButton>
-      <ToggleButton value="White" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setColor('White')}><img src={whiteCircle}  alt="whiteCircle" />&nbsp;White</ToggleButton>
+      <ToggleButton value="Red" className={classes.toogleButton} onClick={() => setColor('Red')}><img src={redcircle}  alt="redcircle" />&nbsp;Red</ToggleButton>
+      <ToggleButton value="Blue" className={classes.toogleButton} onClick={() => setColor('Blue')}><img src={bluecircle} alt="bluecircle" />&nbsp;Blue</ToggleButton>
+      <ToggleButton value="White" className={classes.toogleButton} onClick={() => setColor('White')}><img src={whiteCircle}  alt="whiteCircle" />&nbsp;White</ToggleButton>
     </ToggleButtonGroup>
     
 
-    <div style={{flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'}}>
-          <p style={{width: '95px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'}}>Size: <span style={{color:'#2F5AC7'}}>{size}</span></p>
+    <div className={classes.sizeDiv}>
+          <p className={classes.sizeDivP}>Size: <span style={{color:'#2F5AC7'}}>{size}</span></p>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -155,14 +157,14 @@ const ProductDetail1 = () => {
       aria-label="Platform"
       spacing={3}
     >
-      <ToggleButton value="XXL" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setSize('XXL')}>XXL</ToggleButton>
-      <ToggleButton value="XL" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setSize('XL')}>XL</ToggleButton>
-      <ToggleButton value="L" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setSize('L')}>L</ToggleButton>
+      <ToggleButton value="XXL" className={classes.toogleButton} onClick={() => setSize('XXL')}>XXL</ToggleButton>
+      <ToggleButton value="XL"  className={classes.toogleButton} onClick={() => setSize('XL')}>XL</ToggleButton>
+      <ToggleButton value="L"  className={classes.toogleButton} onClick={() => setSize('L')}>L</ToggleButton>
     </ToggleButtonGroup>
 
 
-    <div style={{flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'}}>
-          <p style={{width: '115px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'}}>Intensity: <span style={{color:'#2F5AC7'}}>{intensity}</span></p>
+    <div className={classes.intensityDiv}>
+          <p className={classes.intensityDivP}>Intensity: <span style={{color:'#2F5AC7'}}>{intensity}</span></p>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -172,9 +174,9 @@ const ProductDetail1 = () => {
       aria-label="Platform"
       spacing={3}
     >
-      <ToggleButton value="40cd" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setIntensity('40 cd')}>40 cd</ToggleButton>
-      <ToggleButton value="20cd" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setIntensity('20 cd')}>20 cd</ToggleButton>
-      <ToggleButton value="10cd" style={{margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'}} onClick={() => setIntensity('10 cd')}>10 cd</ToggleButton>
+      <ToggleButton value="40cd" className={classes.toogleButton} onClick={() => setIntensity('40 cd')}>40 cd</ToggleButton>
+      <ToggleButton value="20cd" className={classes.toogleButton} onClick={() => setIntensity('20 cd')}>20 cd</ToggleButton>
+      <ToggleButton value="10cd" className={classes.toogleButton} onClick={() => setIntensity('10 cd')}>10 cd</ToggleButton>
     </ToggleButtonGroup>
       </Box>
       </Drawer>

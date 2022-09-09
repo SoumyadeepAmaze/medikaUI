@@ -33,12 +33,12 @@ function Home() {
         open={open}
         onClose={handleClose}
       >
-      <div style={{display: 'flex',alignItems: 'center',flexDirection: 'row',boxSizing: 'border-box',gap: '8px',background: '#FFFFFF',padding: '11px',width: '100%',border: '1px solid #DAE4FF',borderRadius: '8px',marginTop:'15px'}}>
+      <div style={{display: 'flex',alignItems: 'center',flexDirection: 'row',boxSizing: 'border-box',gap: '8px',background: '#FFFFFF',padding: '11px',width: '88%',border: '1px solid #DAE4FF',borderRadius: '8px',marginTop:'15px',marginLeft:"24px"}}>
           <img src={search} alt="search icon" onClick={handleClickOpen}/>
           <input style={{border:'none',fontSize: '1rem',width: '70%',color: 'black'}} type="text" placeholder="Syringe,centrifuge,Ventilator"/> 
       </div>
        <DialogTitle>Previous Search</DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{maxHeight:"100px"}}>
           <DialogContentText id="alert-dialog-slide-description">
            <span><img src={history} alt="history"/>&nbsp;Surgical Tape</span><br/>
            <span><img src={history} alt="history"/>&nbsp;Dialyzer</span><br/>

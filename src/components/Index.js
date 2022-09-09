@@ -7,6 +7,7 @@ import Products from "./Products";
 import ScrollTop from "./ScrollTop";
 import scrollreveal from "scrollreveal";
 
+
 const  Index = () => {
   const [theme, setTheme] = useState("light");
   const changeTheme = () => {
@@ -26,10 +27,7 @@ const  Index = () => {
         .home,
         .services-container,
         .categories-container,
-        .recommend-container,
-        .choose-us-container,
         .products-container,
-        .promo-container,
         footer
     `,
         {
