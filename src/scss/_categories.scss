@@ -1,3 +1,5 @@
+
+
 .categories-container {
   margin-top: 15px;
   .container {
@@ -10,6 +12,7 @@
       margin-bottom: 14px;
       text-align: center;
       h2 {
+        font-family: 'DM Sans', sans-serif;
         position: absolute;
         padding-top: 5px;
         width: 106px;
@@ -42,7 +45,8 @@
         right: 16px;
         top: 10px;
 
-        font-family: 'DM Sans';
+        // font-family: 'DM Sans';
+        font-family: 'DM Sans', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -60,6 +64,8 @@
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
       gap: 1rem;
+      font-family: 'DM Sans', sans-serif;
+
       .category {
         display: flex;
         // flex-direction: column;

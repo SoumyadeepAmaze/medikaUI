@@ -16,6 +16,11 @@ import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import Paper from '@mui/material/Paper';
+import home from '../assets/HomeIcon.png'
+import chatIcon from '../assets/ChatIcon.png'
+import cart from '../assets/CartIcon.png'
+import wishlist from '../assets/WishlistIcon.png'
+import profile from '../assets/ProfileIcon.png'
 
 
 const  Index = () => {
@@ -64,11 +69,11 @@ const  Index = () => {
         <BottomNavigation
           showLabels
         >
-          <BottomNavigationAction icon={<HomeIcon />} />
-          <BottomNavigationAction icon={<SmsOutlinedIcon />} />
-          <BottomNavigationAction icon={<ShoppingBagOutlinedIcon />} />
-          <BottomNavigationAction icon={<FavoriteBorderOutlinedIcon />} />
-          <BottomNavigationAction icon={<AccountCircleOutlinedIcon />} />
+          <BottomNavigationAction icon={<img src={home} alt='home'/>} />
+          <BottomNavigationAction icon={<img src={chatIcon} alt='chatIcon'/>} />
+          <BottomNavigationAction icon={<img src={cart} alt='cart'/>} />
+          <BottomNavigationAction icon={<img src={wishlist} alt='wishlist'/>} />
+          <BottomNavigationAction icon={<img src={profile} alt='profile'/>} />
         </BottomNavigation>
       </Paper>
       </Box>
