@@ -26,6 +26,7 @@ import Wishlist from "../assets/Wishlist.png"
 import { useStyles } from './ProductDetail.styles';
 import IconMinus from "../assets/IconMinus.png";
 import IconPlus from "../assets/IconPlus.png";
+import rightArrow from "../assets/rightArrow.png"
 
 import "../scss/_productDetail.scss";
 
@@ -51,13 +52,27 @@ const ProductDetail1 = () => {
   const [alignment2, setAlignment2] = useState('XXL');
   const [alignment3, setAlignment3] = useState('40cd');
 
+  const [description,setDesctiption] = useState(true);
+  const [materials,setMaterials] = useState(false);
+
   const[counter,setCounter] = useState(0);
 
+  const handleDescriptionClick = () => {
+    setDesctiption(true);
+    setMaterials(false);
+  }
+  const handleMaterialClick = () => {
+    setMaterials(true);
+    setDesctiption(false);
+  }
+
   const handleIncrement = () => {
-   setCounter({ counter: counter + 1 });
+   if(counter>-1)
+    setCounter(counter+1);
   };
   const handleDecrement  = () => {
-    setCounter({ counter: counter - 1 });
+    if(counter!==0)
+      setCounter(counter-1);
    };
 
   const handleButton1Change = (event, newAlignment) => {
@@ -102,26 +117,37 @@ const ProductDetail1 = () => {
         </div>
         <div className={classes.contentContainer}>
         <div className="title-container">
-          <h2 className="prodDetail">Ivoclar Vivadent BluePhase</h2>
-          <h3 className="price">$599</h3>
+        <div className='productTitle'>
+                <h2 className="prodDetail">Ivoclar Vivadent BluePhase</h2>
+              </div>
+              <div className="pricingCounterContainer">
+                <div className="pricing">
+                  <h3 className="price">$599</h3>
+                </div>
+                <div className="counterBtnContainer">
+                  <button className='counterBtn' onClick={handleDecrement}>-</button>
+                  <p className='counterValue'>{counter}</p>
+                  <button className='counterBtn' onClick={handleIncrement}>+</button>
+                </div>
+          </div>
         </div>
         <div>
           <h3 className="variant">Choose Variant</h3>
         </div>
         <div className="details">
-          <span onClick={handleClickOpen}><span className="colorDetails">color: <span style={{color:"#2F5AC7"}}>{color}</span></span>&nbsp;<span className="sizeDetails">Size: <span style={{color:"#2F5AC7"}}>{size}</span></span>&nbsp;<span className="intensityDetails">Intensity: <span style={{color:"#2F5AC7"}}>{intensity}</span></span></span>
+          <span onClick={handleClickOpen}><span className="colorDetails">Color: <span style={{color:"#2F5AC7"}}>{color}</span></span>&nbsp;<span className="sizeDetails">Size: <span style={{color:"#2F5AC7"}}>{size}</span></span>&nbsp;<span className="intensityDetails">Intensity: <span style={{color:"#2F5AC7"}}>{intensity}</span></span><span className="imageDetails"><img src={rightArrow} alt="right arrow"/></span></span>
         </div>
         <Box className={classes.box1Container}>
         <TabContext value={value}>
         <Box className={classes.box2Container}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Description" value="1" />
-            <Tab label="Materials" value="2" />
+          <TabList onChange={handleChange} aria-label="Description Tabs">
+            <Tab label="Description" value="1" onClick={handleDescriptionClick} className={description?classes.tabButton:''}/>
+            <Tab label="Materials" value="2" onClick={handleMaterialClick} className={materials?classes.tabButton:''}/>
           </TabList>
         </Box>
-        <TabPanel value="1"><p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p><br/>
+        <TabPanel value="1" className={classes.tabPanel}><p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p><br/>
         <p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
-        <TabPanel value="2"><p className={classes.tabPanelP}>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
+        <TabPanel value="2" className={classes.tabPanel}><p className={classes.tabPanelP}>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
         <p className={classes.tabPanelP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida.</p></TabPanel>
       </TabContext>
       </Box>

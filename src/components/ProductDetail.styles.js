@@ -7,6 +7,10 @@ export const useStyles = makeStyles({
   box2Container: {
     borderBottom: 1, borderColor: 'divider'
   },
+  tabPanel:{
+    paddingTop: '10px !important',
+    textAlign: 'left'
+  },
   tabPanelP: {
     fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'
   },
@@ -22,6 +26,10 @@ export const useStyles = makeStyles({
   colorDivP:{
     width: '95px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'
   },
+  tabButton:{
+    background: '#DDEBFF',
+    borderRadius: '8px',
+  },
   colorDivPSpan:{
     width: '130px',
     height: '15px',
@@ -31,7 +39,7 @@ export const useStyles = makeStyles({
     /* identical to box height, or 15px */
 
     textAlign: 'right',
-    top: '55px',
+    top: '50px',
     position: 'absolute',
     right: '13px',
     color: 'rgba(42, 70, 137, 0.5)',

@@ -37,9 +37,9 @@ function Home() {
         open={open}
         onClose={handleClose}
       >
-      <div className={classes.backDiv}>
+      {/* <div className={classes.backDiv}>
       <img src={IconBack} className="backicon" alt="search icon" onClick={() => setOpen(false)}/>
-      </div>
+      </div> */}
       <div className={classes.searchDiv}>
           
           <img src={search} alt="search icon" onClick={handleClickOpen}/>

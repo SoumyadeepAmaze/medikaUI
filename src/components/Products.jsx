@@ -49,7 +49,7 @@ function Products() {
       <div className="container">
         <div className="title-container">
         <h2>Popular</h2>
-        <h3 className="see-all">see all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
+        <h3 className="see-all">See all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
         </div>
         <div className="products">
           {products.map(({ image, name, price,route }, index) => {
@@ -59,7 +59,7 @@ function Products() {
                   className="wishlist"
                   style={{
                     float: 'right',
-                    padding: '6px'
+                    padding: '1px'
                   }}>
                   <img src={Wishlist2} alt="notification" className="notification-image" />
                 </div>
