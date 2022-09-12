@@ -24,6 +24,8 @@ import RR from "../assets/RR.png"
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Wishlist from "../assets/Wishlist.png"
 import { useStyles } from './ProductDetail.styles';
+import IconMinus from "../assets/IconMinus.png";
+import IconPlus from "../assets/IconPlus.png";
 
 import "../scss/_productDetail.scss";
 
@@ -39,7 +41,7 @@ const ProductDetail1 = () => {
   ];
   const navigate = useNavigate();
   const [color,setColor] = useState('Red');
-  const [size,setSize] = useState('XL');
+  const [size,setSize] = useState('XXL');
   const [intensity,setIntensity] = useState('40 cd');
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('1');
@@ -124,6 +126,9 @@ const ProductDetail1 = () => {
       </TabContext>
       </Box>
       </div>
+      <div>
+      <img src={RR} className="ratings" alt="ratings" />
+      </div>
       </div>
       <Drawer
             anchor='bottom'
@@ -131,13 +136,13 @@ const ProductDetail1 = () => {
             onClose={handleClose}
       >
         <Box
-          sx={{ width: 'auto'}}
+          sx={{ width: 'auto',height: '370px'}}
         >
         <div className={classes.variantDiv}>
           <h3 className={classes.variantDivH3}>Select Variant</h3>
         </div>
         <div className={classes.colorDiv}>
-          <p className={classes.colorDivP}>Color: <span style={{color:'#2F5AC7'}}>{color}</span></p>
+          <p className={classes.colorDivP}>Color: <span style={{color:'#2F5AC7'}}>{color}</span></p><span className={classes.colorDivPSpan}>(3 options available)</span>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -146,6 +151,7 @@ const ProductDetail1 = () => {
       onChange={handleButton1Change}
       aria-label="Platform"
       spacing={3}
+      style={{marginLeft:"10px"}}
     >
       <ToggleButton value="Red" className={classes.toogleButton} onClick={() => setColor('Red')}><img src={redcircle}  alt="redcircle" />&nbsp;Red</ToggleButton>
       <ToggleButton value="Blue" className={classes.toogleButton} onClick={() => setColor('Blue')}><img src={bluecircle} alt="bluecircle" />&nbsp;Blue</ToggleButton>
@@ -154,7 +160,7 @@ const ProductDetail1 = () => {
     
 
     <div className={classes.sizeDiv}>
-          <p className={classes.sizeDivP}>Size: <span style={{color:'#2F5AC7'}}>{size}</span></p>
+          <p className={classes.sizeDivP}>Size: <span style={{color:'#2F5AC7'}}>{size}</span></p><span className={classes.sizeDivPSpan}>(4 options available)</span>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -163,6 +169,7 @@ const ProductDetail1 = () => {
       onChange={handleButton2Change}
       aria-label="Platform"
       spacing={3}
+      style={{marginLeft:"10px"}}
     >
       <ToggleButton value="XXL" className={classes.toogleButton} onClick={() => setSize('XXL')}>XXL</ToggleButton>
       <ToggleButton value="XL"  className={classes.toogleButton} onClick={() => setSize('XL')}>XL</ToggleButton>
@@ -171,7 +178,7 @@ const ProductDetail1 = () => {
 
 
     <div className={classes.intensityDiv}>
-          <p className={classes.intensityDivP}>Intensity: <span style={{color:'#2F5AC7'}}>{intensity}</span></p>
+          <p className={classes.intensityDivP}>Intensity: <span style={{color:'#2F5AC7'}}>{intensity}</span></p><span className={classes.intensityDivPSpan}>(3 options available)</span>
         </div>
       <ToggleButtonGroup
       color="primary"
@@ -180,6 +187,7 @@ const ProductDetail1 = () => {
       onChange={handleButton3Change}
       aria-label="Platform"
       spacing={3}
+      style={{marginLeft:"10px"}}
     >
       <ToggleButton value="40cd" className={classes.toogleButton} onClick={() => setIntensity('40 cd')}>40 cd</ToggleButton>
       <ToggleButton value="20cd" className={classes.toogleButton} onClick={() => setIntensity('20 cd')}>20 cd</ToggleButton>
@@ -187,9 +195,7 @@ const ProductDetail1 = () => {
     </ToggleButtonGroup>
       </Box>
       </Drawer>
-      <div>
-      <img src={RR} className="ratings" alt="ratings" />
-      </div>
+      
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels

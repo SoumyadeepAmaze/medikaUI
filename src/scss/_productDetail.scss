@@ -198,7 +198,13 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-  
+        .counterDiv{
+          position: absolute;
+          width: 84px;
+          height: 24px;
+          left: 271px;
+          top: 341px;
+        }
         h2 {
           color: var(--dark-blue);
         }

@@ -55,6 +55,14 @@ function Products() {
           {products.map(({ image, name, price,route }, index) => {
             return (
               <Card className={classes.cardContainer}>
+              <div
+                  className="wishlist"
+                  style={{
+                    float: 'right',
+                    padding: '6px'
+                  }}>
+                  <img src={Wishlist2} alt="notification" className="notification-image" />
+                </div>
               <CardMedia
                 component="img"
                 height="149"
@@ -72,11 +80,24 @@ function Products() {
                    >
                   {name}
                 </Typography>
-                <Typography variant="body2"
-                class="cost-align"
-                >
-                  {price}
-                </Typography>
+                {name=="Being Foshan Contra..."?
+                
+                  <Typography variant="body2"
+                  class="cost-align2"
+                  > 
+                    {price}
+                  <Typography variant="body2"
+                    class="cost-align3"
+                  >
+                    $599
+                  </Typography>
+                  </Typography>:
+                  <Typography variant="body2"
+                  class="cost-align"
+                  >
+                    {price}
+                  </Typography>
+                }
               </CardContent>
               
             </Card>

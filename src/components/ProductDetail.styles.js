@@ -11,31 +11,73 @@ export const useStyles = makeStyles({
     fontStyle: 'normal',fontWeight: '400',fontSize: '14px',lineHeight: '24px',letterSpacing: '0.005em',color: '#AAAAAA'
   },
   variantDiv: {
-    flexDirection:'row',alignItems:'flex-start',display:'flex',padding:'8px 8px 8px 8px',gap:'8px',width:'359px',height:'84px'
+    flexDirection:'row',alignItems:'flex-start',display:'flex',padding:'8px 8px 8px 8px',gap:'8px',width:'359px',height:'44px'
   },
   variantDivH3: {
     fontStyle:'normal',fontWeight:'500',fontSize:'18px',lineHeight:'35px',letterSpacing:'0.005em',width:'126px',height:'21px',color:'#121212'
   },
   colorDiv:{
-    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
+    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '15px 9px 3px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
   },
   colorDivP:{
     width: '95px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'
   },
+  colorDivPSpan:{
+    width: '130px',
+    height: '15px',
+    fontWeight: '500',
+    fontSize: '13px',
+    lineHeight: '150%',
+    /* identical to box height, or 15px */
+
+    textAlign: 'right',
+    top: '55px',
+    position: 'absolute',
+    right: '13px',
+    color: 'rgba(42, 70, 137, 0.5)',
+  },
   toogleButton: {
-    margin:"10px",boxSizing:'border-box',border: '1px solid #2F5AC7',borderRadius: '4px'
+    marginRight:"14px !important",boxSizing:'border-box !important',border: '1px solid #EBEBEB !important',borderRadius: '4px !important',width:'100px !important'
   },
   sizeDiv: {
-    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
+    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '25px 11px 10px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
   },
   sizeDivP: {
     width: '95px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'
   },
+  sizeDivPSpan:{
+    width: '130px',
+    height: '15px',
+    fontWeight: '500',
+    fontSize: '13px',
+    lineHeight: '150%',
+    /* identical to box height, or 15px */
+
+    textAlign: 'right',
+    top: '151px',
+    position: 'absolute',
+    right: '13px',
+    color: 'rgba(42, 70, 137, 0.5)',
+  },
   intensityDiv: {
-    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '16px 18px 12px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
+    flexDirection: 'row',justifyContent: 'space-between',alignItems: 'center',padding: '23px 9px 6px',width: '359px',background: '#FFFFFF',borderRadius: '8px'
   },
   intensityDivP: {
     width: '115px',height: '25px',fontStyle: 'normal',fontWeight: '500',fontSize: '15px',lineHeight: '0%',color: '#444444'
+  },
+  intensityDivPSpan:{
+    width: '130px',
+    height: '15px',
+    fontWeight: '500',
+    fontSize: '13px',
+    lineHeight: '150%',
+    /* identical to box height, or 15px */
+
+    textAlign: 'right',
+    top: '257px',
+    position: 'absolute',
+    right: '13px',
+    color: 'rgba(42, 70, 137, 0.5)',
   },
   bottomNavigationIcon:{
     position: 'absolute',
@@ -71,7 +113,7 @@ export const useStyles = makeStyles({
     letterSpacing: '0.005em',
   },
   contentContainer: {
-    height: '500px',
+    height: '550px',
     borderRadius: '20px 20px 0px 0px',
     boxShadow: '0px -4px 17px rgb(0 0 0 / 8%)'
   }

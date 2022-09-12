@@ -12,7 +12,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import HomeIcon from '@mui/icons-material/Home';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import Paper from '@mui/material/Paper';
@@ -65,7 +65,7 @@ const  Index = () => {
           showLabels
         >
           <BottomNavigationAction icon={<HomeIcon />} />
-          <BottomNavigationAction icon={<ChatBubbleOutlineOutlinedIcon />} />
+          <BottomNavigationAction icon={<SmsOutlinedIcon />} />
           <BottomNavigationAction icon={<ShoppingBagOutlinedIcon />} />
           <BottomNavigationAction icon={<FavoriteBorderOutlinedIcon />} />
           <BottomNavigationAction icon={<AccountCircleOutlinedIcon />} />
