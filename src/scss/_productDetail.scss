@@ -44,12 +44,12 @@
       .prodDetail{
         position: absolute;
         height: 26px;
-        left: 20px;
-        right: 97px;
+        left: 21px;
+        right: 119px;
         top: 300px;
 
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 20px;
         line-height: 26px;
         /* identical to box height */
@@ -62,7 +62,7 @@
       .price{
         position: absolute;
         height: 26px;
-        left: 20px;
+        left: 8px;
         right: 305px;
         top: 338px;
 
@@ -81,7 +81,7 @@
       .variant{
         position: absolute;
         height: 18px;
-        left: 21px;
+        left: 5px;
         right: 249px;
         top: 392px;
     
@@ -131,10 +131,10 @@
       }
       .colorDetails{
         height: 15px;
-        left: 33px;
+        left: 7px;
         right: 268px;
-        top: 446px;
-
+        top: 20px;
+        position: absolute;
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
@@ -147,10 +147,11 @@
       }
       .sizeDetails{
         height: 15px;
-        left: 115px;
+        left: 83px;
         right: 205px;
-        top: 446px;
-
+        top: 20px;
+        width: 26%;
+        position: absolute;
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
@@ -163,10 +164,11 @@
       }
       .intensityDetails{
         height: 15px;
-        left: 178px;
+        left: 167px;
         right: 85px;
-        top: 446px;
-
+        top: 20px;
+        position: absolute;
+        width: 30%;
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
@@ -176,6 +178,14 @@
         letter-spacing: 0.005em;
 
         color: #444444;
+      }
+      .imageDetails{
+        height: 15px;
+        left: 274px;
+        right: 8px;
+        top: 18px;
+        position: absolute;
+        
       }
       .backicon{
         position: absolute;
@@ -188,18 +198,39 @@
         position: absolute;
         width: 32px;
         height: 32px;
-        left: 323px;
-        top: 56px;
+        left: 352px;
+        top: 54px;
       }
       .title-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-  
-        h2 {
-          color: var(--dark-blue);
+        height: 100px;
+        .productTitle {
+          padding: 20px;
+        }
+        .pricingCounterContainer {
+          .pricing {
+            float: left;
+            padding: 0px 20px;
+          }
+          .counterBtnContainer {
+            float: right;
+            padding: 20px 20px;
+            display: flex;
+
+            .counterValue {
+              padding: 3px 16px 0px 16px;
+            }
+
+            .counterBtn {
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+              width: 24px;
+              height: 24px;
+              color: #2F5AC7;
+              border-radius: 7px;
+              border: 2px solid #2F5AC7;
+              font-size: 20px;
+              background: #FFFFFF;
+            }
+          }
         }
       }
       .products {

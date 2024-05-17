@@ -20,7 +20,7 @@ function Categories() {
       <div className="container">
         <div className="title-container">
           <h2>Categories</h2>
-          <h3 className="see-all">see all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
+          <h3 className="see-all">See all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
         </div>
         <div className="categories">
           {categories.map(({ image, title }, index) => {

@@ -11,6 +11,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Wishlist2 from "../assets/Wishlist2.png"
+import { useStyles } from './Products.styles';
+
 function Products() {
   const navigate = useNavigate();
 
@@ -40,22 +43,32 @@ function Products() {
       price: "$899",
     },
   ];
+  const classes = useStyles();
   return (
     <div className="products-container mx-3 py-3">
       <div className="container">
         <div className="title-container">
         <h2>Popular</h2>
-        <h3 className="see-all">see all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
+        <h3 className="see-all">See all <img src={arrowright} alt="arrow-right" className="arrow-right"/></h3>
         </div>
         <div className="products">
           {products.map(({ image, name, price,route }, index) => {
             return (
-              <Card sx={{ maxWidth: "47%", display: "inline-block", marginRight:"3%", marginBottom:"3%"}}>
+              <Card className={classes.cardContainer}>
+              <div
+                  className="wishlist"
+                  style={{
+                    float: 'right',
+                    padding: '1px'
+                  }}>
+                  <img src={Wishlist2} alt="notification" className="notification-image" />
+                </div>
               <CardMedia
                 component="img"
                 height="149"
                 image={image}
                 alt={name}
+                className={classes.cardMedia}
                 class="padding-image"
                 onClick={() => navigate(route)}
               />
@@ -67,11 +80,24 @@ function Products() {
                    >
                   {name}
                 </Typography>
-                <Typography variant="body2"
-                class="cost-align"
-                >
-                  {price}
-                </Typography>
+                {name=="Being Foshan Contra..."?
+                
+                  <Typography variant="body2"
+                  class="cost-align2"
+                  > 
+                    {price}
+                  <Typography variant="body2"
+                    class="cost-align3"
+                  >
+                    $599
+                  </Typography>
+                  </Typography>:
+                  <Typography variant="body2"
+                  class="cost-align"
+                  >
+                    {price}
+                  </Typography>
+                }
               </CardContent>
               
             </Card>

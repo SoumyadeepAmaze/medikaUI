@@ -6,10 +6,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import history from '../assets/history.png'
-
+import { useStyles } from './Home.styles';
+import IconBack from "../assets/IconBack.png";
+import { useNavigate } from "react-router";
 
 function Home() {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,6 +21,7 @@ function Home() {
   const handleClose = () => {
     setOpen(false);
   };
+  const classes = useStyles();
   return (
     <div className="home">
       <div className="container mx-3 search-bottom">
@@ -33,12 +37,16 @@ function Home() {
         open={open}
         onClose={handleClose}
       >
-      <div style={{display: 'flex',alignItems: 'center',flexDirection: 'row',boxSizing: 'border-box',gap: '8px',background: '#FFFFFF',padding: '11px',width: '100%',border: '1px solid #DAE4FF',borderRadius: '8px',marginTop:'15px'}}>
+      {/* <div className={classes.backDiv}>
+      <img src={IconBack} className="backicon" alt="search icon" onClick={() => setOpen(false)}/>
+      </div> */}
+      <div className={classes.searchDiv}>
+          
           <img src={search} alt="search icon" onClick={handleClickOpen}/>
-          <input style={{border:'none',fontSize: '1rem',width: '70%',color: 'black'}} type="text" placeholder="Syringe,centrifuge,Ventilator"/> 
+          <input className={classes.searchInput} type="text" placeholder="Syringe,centrifuge,Ventilator"/> 
       </div>
        <DialogTitle>Previous Search</DialogTitle>
-        <DialogContent>
+        <DialogContent className={classes.dialogContent}>
           <DialogContentText id="alert-dialog-slide-description">
            <span><img src={history} alt="history"/>&nbsp;Surgical Tape</span><br/>
            <span><img src={history} alt="history"/>&nbsp;Dialyzer</span><br/>
